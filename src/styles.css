@@ -1,0 +1,24 @@
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f6f1e7;--fg:#2b2118;--line:#8a6a45;--node:#e9dcc4;--red:#c8372d;--blue:#2457b8;--hint:#2e9e5b;--card:#fffaf0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#1b1713;--fg:#f0e6d4;--line:#b08d5e;--node:#3a3128;--red:#e5594e;--blue:#5b8ae6;--hint:#4cc783;--card:#262019}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#1b1713;--fg:#f0e6d4;--line:#b08d5e;--node:#3a3128;--red:#e5594e;--blue:#5b8ae6;--hint:#4cc783;--card:#262019}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Georgia,'Times New Roman',serif;display:flex;flex-direction:column;align-items:center;padding:16px;touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none}
+#root{display:flex;flex-direction:column;align-items:center;width:100%}
+h1{margin:4px 0;font-size:2rem;letter-spacing:.05em}
+.status{min-height:1.6em;font-size:1.1rem;margin:6px 0;text-align:center}
+svg{width:100%;max-width:560px;height:auto;background:var(--card);border-radius:14px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:8px 0}
+button{font:inherit;padding:8px 14px;min-height:44px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+button.on{background:var(--line);color:var(--bg)}
+.rules{max-width:560px;font-size:.95rem;line-height:1.5}
+.pt{cursor:pointer}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:10;overflow:hidden;padding:16px}
+.ov .card{background:var(--card);border-radius:18px;padding:22px 26px;text-align:center;max-width:360px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,.4);animation:pop .4s ease;position:relative}
+.crown{font-size:3rem}.ov h2{margin:4px 0;font-size:2rem}.sub{opacity:.75;margin:6px 0}
+.ov table{width:100%;margin:12px 0;border-collapse:collapse}
+.ov td,.ov th{padding:7px 4px;border-bottom:1px solid var(--line)}.ov th{font-weight:normal;opacity:.7}.ov td{font-size:1.3rem;font-weight:bold;width:30%}
+.ov i{position:absolute;top:-16px;width:9px;height:14px;animation:fall linear infinite}
+.ov .card button{margin:4px}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+@keyframes pop{from{transform:scale(.7);opacity:0}}
